@@ -536,8 +536,7 @@
 </script>
 <!--end expanding code-->
 
-<script type="text/javascript" charset="UTF-8"
-	src="//s3-eu-west-1.amazonaws.com/gsopublic/Cookie%2bScript/CookieScript_1.js" async></script>
+<script type="text/javascript" charset="UTF-8" src="./The Willink School - Home_files/cookies.js.download" async=""></script>
 <!-- hide sidebars if empty -->
 <script type="text/javascript">
 	var cleft = $.trim($('.ColumnLeft').text()).length;
@@ -557,8 +556,42 @@
 	}
 </script>
 <!--end sidebar hide -->
-<script type="text/javascript">
-	//$("video").css({"height": "110%", "width": "100%"});
+
+<script type="text/javascript">	
+	//// add tableborder class on small displays
+	if ($(window).width() < 960) {
+		$('table').each(function() {
+			if ($(this).prop('scrollWidth') > $(this).width() ) {
+				$(this).wrap("<div class='js-scrollable'></div>");
+				if (!$(this).attr('class') || !$(this).attr('class').length) $(this).addClass('tableborder')
+				new ScrollHint('.js-scrollable');
+				}						
+			})
+	}
+	
+	if ($(window).width() < 500) {
+		var MobileImage = $('#mainholder img');
+			MobileImage.each(function () {
+				var that = $(this);
+				if (that.width() > 200) {
+					that.addClass('imagefullwidth');
+				}
+			})
+	}
+	
+	$( window ).resize(function() {
+			$('table').each(function() {
+					if (!$(this).attr('class') || !$(this).attr('class').length) $(this).addClass('tableborder')
+				})
+	});
+	//$('table').click(function () {
+		//$(".scroll-hint-icon'").hide();
+		//});
+
+
+
+
+
 </script> 
 
 
